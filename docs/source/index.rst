@@ -10,6 +10,75 @@ Welcome to docs's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. automodule:: macmassage_site.about_macmassage.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.about_macmassage.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.accounts.apps
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.accounts.forms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.accounts.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.accounts.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.bookings.forms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.bookings.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.bookings.serializer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.bookings.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.macmassage_site.views
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.newsletter.admin
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.newsletter.forms
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: macmassage_site.newsletter.models
+   :members:
+   :undoc-members:
+   :show-inheritance:
 
 
 Indices and tables
