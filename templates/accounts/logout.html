@@ -1,0 +1,10 @@
+<!-- accounts/templates/accounts/logout.html -->
+<!-- This is the logout message-->
+{% extends 'base_styles.html' %}
+
+{% block content %}
+    <h1>Logged Out Successfully</h1>
+    <p>You have been successfully logged out.</p>
+    <p><a href="{% url 'login' %}">Login again</a></p>
+{% endblock %}
+

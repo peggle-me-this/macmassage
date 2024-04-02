@@ -1,0 +1,6 @@
+<!--send_newsletter.html (Template for newsletter composition)-->
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Send Newsletter</button>
+</form>

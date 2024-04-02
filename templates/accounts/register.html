@@ -1,0 +1,154 @@
+<!-- accounts/templates/accounts/register.html -->
+<!-- This is the register code and forms for registering a new user-->
+{% load static %} 
+{% include 'base_styles.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <style>
+
+        .register {
+            padding-left: 150px;
+            padding-bottom: 40px;
+            padding-bottom: 30px;
+            color: darkorchid;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 60px;
+        }
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 17px;
+            color: midnightblue;
+            
+        }
+        .form-control {
+            width: 100%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            color: midnightblue;
+        }
+
+        .btn {
+            color: midnightblue;
+            background-color: aqua;
+            width: 89px;
+            margin-top: 10px;
+        }
+
+        .btn:hover{
+            background-color: darkorchid;
+        }
+        .form-check-input {
+            background-color: aqua;
+        }
+
+        .form-check-input:checked {
+            background-color: darkorchid;
+        }
+
+    </style>
+
+    <title>Register</title>
+</head>
+<body>
+    <h1 class="register">Register</h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <h2>Sign Up</h2>
+        {% for field in form %}
+            <p>
+                {% if field.errors %}
+                    <ul class="errorlist">
+                        {% for error in field.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {{ field.label_tag }} {{ field }}
+            </p>
+        {% endfor %}
+        <input type="submit" value="Register" />
+        <p>Already have an account? <a href="{% url 'accounts:login' %}">Login</a></p>
+    </form>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-1K/XfPXXNtFta4su70/iNtKhZApT4HIcKDzpL+xlCqthEYDfRe6ZpZfWU1MTDAgx" crossorigin="anonymous"></script>
+</body>
+</html>
+<!--
+</head>
+<body>
+    <h1 class="register">Register</h1>
+    {% block content %}
+    <form method="post" class="container">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.first_name.label_tag }}
+                    {{ form.first_name }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.last_name.label_tag }}
+                    {{ form.last_name }}
+                </div>
+            </div> 
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.email.label_tag }}
+                    {{ form.email }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.phone_number.label_tag }}
+                    {{ form.phone_number }}
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="mb-3">
+                    {{ form.password1.label_tag }}
+                    {{ form.password1 }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    {{ form.password2.label_tag }}
+                    {{ form.password2 }}
+                </div>
+            </div>
+        </div>
+        <div class="mb-3 form-check">
+            <input class="form-check-input" type="checkbox" id="subscribe_to_newsletter" name="subscribe_to_newsletter">
+            <label class="form-check-label" for="subscribe_to_newsletter">
+                Subscribe to my newsletter for upcoming news and specials!!
+            </label>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+{% endblock %}
+
+</body>
+</html>
+-->
+
+    <!-- Bootstrap JS  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" 
+    crossorigin="anonymous">
+    </script> 
