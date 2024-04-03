@@ -1,5 +1,5 @@
 .. Macmassage Website documentation master file, created by
-   sphinx-quickstart on Wed Apr  3 11:10:48 2024.
+   sphinx-quickstart on Wed Apr  3 12:23:09 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
@@ -11,10 +11,15 @@ Welcome to Macmassage Website's documentation!
    :caption: Contents:
 
 
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   about_macmassage
+   about_macmassage.migrations
+   accounts
+   accounts.migrations
+   bookings
+   bookings.migrations
+   conf
+   macmassage_site
+   manage
+   newsletter
+   newsletter.migrations
+   modules.rst

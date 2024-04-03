@@ -18,7 +18,6 @@ from dotenv import load_dotenv
 load_dotenv()
 
 
-
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
@@ -48,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'django_redis',
+    'docs',
 ]
 
 MIDDLEWARE = [
@@ -62,6 +62,9 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'macmassage_site.urls'
+
+DOCS_ROOT = os.path.join(BASE_DIR, 'docs/_build/html')
+DOCS_ACCESS = 'public'
 
 TEMPLATES = [
     {
