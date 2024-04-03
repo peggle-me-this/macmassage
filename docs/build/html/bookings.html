@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>bookings package &mdash; Macmassage Website 1.3 documentation</title>
+  <title>Booking Form Class &mdash; Macmassage Website 1.3 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
 
@@ -50,33 +50,8 @@
 <li class="toctree-l1"><a class="reference internal" href="about_macmassage.migrations.html">about_macmassage.migrations package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">accounts package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.migrations.html">accounts.migrations package</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">bookings package</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-admin-module">bookings.admin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-apps-module">bookings.apps module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-forms-module">bookings.forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-models-module">bookings.models module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-serializers-module">bookings.serializers module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-tasks-module">bookings.tasks module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-tests-module">bookings.tests module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-urls-module">bookings.urls module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#bookings-views-module">bookings.views module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-contents">Module contents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newsletter.html">newsletter package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="newsletter.migrations.html">newsletter.migrations package</a></li>
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">macmassage_site</a><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="about_macmassage.html">about_macmassage package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="accounts.html">accounts package</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">bookings package</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Booking Form Class</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bookings-package">bookings package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
 </ul>
@@ -90,13 +65,45 @@
 <li class="toctree-l3"><a class="reference internal" href="#bookings-tasks-module">bookings.tasks module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bookings-tests-module">bookings.tests module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#bookings-urls-module">bookings.urls module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#bookings-views-module">bookings.views module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-contents">Module contents</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#bookings-views">Bookings Views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macmassage_site.html#id1">macmassage_site.views</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newsletter.html">newsletter package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newsletter.html#id2">newsletter.forms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newsletter.html#newsletter-models">newsletter.models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="newsletter.migrations.html">newsletter.migrations package</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">macmassage_site</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about_macmassage.html">about_macmassage package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounts.html">accounts package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Booking Form Class</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bookings-package">bookings package</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#subpackages">Subpackages</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-admin-module">bookings.admin module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-apps-module">bookings.apps module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-forms-module">bookings.forms module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-models-module">bookings.models module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-serializers-module">bookings.serializers module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-tasks-module">bookings.tasks module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-tests-module">bookings.tests module</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings-urls-module">bookings.urls module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#bookings-views">Bookings Views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macmassage_site.html#id1">macmassage_site.views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="newsletter.html">newsletter package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="newsletter.html#id2">newsletter.forms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="newsletter.html#newsletter-models">newsletter.models</a></li>
 </ul>
 </li>
 </ul>
@@ -115,7 +122,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">bookings package</li>
+      <li class="breadcrumb-item active">Booking Form Class</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/bookings.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -125,10 +132,12 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="bookings-package">
-<h1>bookings package<a class="headerlink" href="#bookings-package" title="Link to this heading"></a></h1>
+  <section id="booking-form-class">
+<span id="bookings-forms"></span><h1>Booking Form Class<a class="headerlink" href="#booking-form-class" title="Link to this heading"></a></h1>
+<section id="bookings-package">
+<h2>bookings package<a class="headerlink" href="#bookings-package" title="Link to this heading"></a></h2>
 <section id="subpackages">
-<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<h3>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h3>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a><ul>
@@ -142,38 +151,46 @@
 </div>
 </section>
 <section id="submodules">
-<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+<h3>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-admin-module">
-<h2>bookings.admin module<a class="headerlink" href="#bookings-admin-module" title="Link to this heading"></a></h2>
+<h3>bookings.admin module<a class="headerlink" href="#bookings-admin-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-apps-module">
-<h2>bookings.apps module<a class="headerlink" href="#bookings-apps-module" title="Link to this heading"></a></h2>
+<h3>bookings.apps module<a class="headerlink" href="#bookings-apps-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-forms-module">
-<h2>bookings.forms module<a class="headerlink" href="#bookings-forms-module" title="Link to this heading"></a></h2>
+<h3>bookings.forms module<a class="headerlink" href="#bookings-forms-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-models-module">
-<h2>bookings.models module<a class="headerlink" href="#bookings-models-module" title="Link to this heading"></a></h2>
+<h3>bookings.models module<a class="headerlink" href="#bookings-models-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-serializers-module">
-<h2>bookings.serializers module<a class="headerlink" href="#bookings-serializers-module" title="Link to this heading"></a></h2>
+<h3>bookings.serializers module<a class="headerlink" href="#bookings-serializers-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-tasks-module">
-<h2>bookings.tasks module<a class="headerlink" href="#bookings-tasks-module" title="Link to this heading"></a></h2>
+<h3>bookings.tasks module<a class="headerlink" href="#bookings-tasks-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-tests-module">
-<h2>bookings.tests module<a class="headerlink" href="#bookings-tests-module" title="Link to this heading"></a></h2>
+<h3>bookings.tests module<a class="headerlink" href="#bookings-tests-module" title="Link to this heading"></a></h3>
 </section>
 <section id="bookings-urls-module">
-<h2>bookings.urls module<a class="headerlink" href="#bookings-urls-module" title="Link to this heading"></a></h2>
+<h3>bookings.urls module<a class="headerlink" href="#bookings-urls-module" title="Link to this heading"></a></h3>
 </section>
-<section id="bookings-views-module">
-<h2>bookings.views module<a class="headerlink" href="#bookings-views-module" title="Link to this heading"></a></h2>
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
 </section>
+<section id="bookings-views">
+<span id="id1"></span><h1>Bookings Views<a class="headerlink" href="#bookings-views" title="Link to this heading"></a></h1>
+<p>This module contains views for handling booking-related functionality.</p>
+<p>The views include:</p>
+<ul class="simple">
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">book_appointment()</span></code>: View function to handle booking appointment requests.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">booking_list()</span></code>: View function to retrieve and render the list of all bookings.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">booking_success()</span></code>: View function to render the booking success page.</p></li>
+<li><p><code class="xref py py-func docutils literal notranslate"><span class="pre">booking_failure()</span></code>: View function to render the booking failure page.</p></li>
+</ul>
+<p>For detailed information about each view, refer to the corresponding docstrings in the source code.</p>
+<p>For more specific views or additional functionality, please refer to the sour</p>
 </section>
 
 

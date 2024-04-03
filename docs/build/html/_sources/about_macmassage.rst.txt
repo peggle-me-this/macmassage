@@ -20,14 +20,25 @@ about\_macmassage.admin module
    :undoc-members:
    :show-inheritance:
 
-about\_macmassage.apps module
------------------------------
+.. _about_macmassage_apps:
 
-.. automodule:: about_macmassage.apps
+=====================
+about_macmassage/apps
+=====================
+
+AboutMacmassageConfig
+---------------------
+
+.. autoclass:: about_macmassage.apps.AboutMacmassageConfig
    :members:
    :undoc-members:
    :show-inheritance:
 
+   AppConfig class for the 'about_macmassage' app.
+
+   Attributes:
+   - default_auto_field (str): The default auto field for the app's models.
+   - name (str): The name of the app.
 about\_macmassage.models module
 -------------------------------
 
@@ -52,14 +63,26 @@ about\_macmassage.urls module
    :undoc-members:
    :show-inheritance:
 
-about\_macmassage.views module
-------------------------------
+.. _about_macmassage_views:
 
-.. automodule:: about_macmassage.views
-   :members:
-   :undoc-members:
-   :show-inheritance:
+====================
+about_macmassage/views
+====================
 
+about_index
+-----------
+
+.. autofunction:: about_macmassage.views.about_index
+
+   View function for the about page.
+
+   Parameters:
+   - request (HttpRequest): The HTTP request object.
+
+   Returns:
+   - HttpResponse: The rendered HTML response for the about page.
+
+   
 Module contents
 ---------------
 

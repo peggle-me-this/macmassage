@@ -50,9 +50,11 @@
 <li class="toctree-l1"><a class="reference internal" href="about_macmassage.migrations.html">about_macmassage.migrations package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.html">accounts package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="accounts.migrations.html">accounts.migrations package</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bookings.html">bookings package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookings.html">Booking Form Class</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bookings.html#bookings-views">Bookings Views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
 <li class="toctree-l1"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="macmassage_site.html#id1">macmassage_site.views</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manage.html">manage module</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">newsletter package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -61,9 +63,18 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#newsletter-admin-module">newsletter.admin module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#newsletter-apps-module">newsletter.apps module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#newsletter-forms-module">newsletter.forms module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#newsletter-models-module">newsletter.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#newsletter-apps-module">newsletter.apps module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#newsletter-forms">Newsletter Forms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#id2">newsletter.forms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#newsletterform">NewsletterForm</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#newsletter-models">newsletter.models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#newsletter">Newsletter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#newsletter-tasks-module">newsletter.tasks module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#newsletter-tests-module">newsletter.tests module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#newsletter-urls-module">newsletter.urls module</a></li>
@@ -75,8 +86,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="modules.html">macmassage_site</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="about_macmassage.html">about_macmassage package</a></li>
 <li class="toctree-l2"><a class="reference internal" href="accounts.html">accounts package</a></li>
-<li class="toctree-l2"><a class="reference internal" href="bookings.html">bookings package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.html">Booking Form Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.html#bookings-views">Bookings Views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macmassage_site.html#id1">macmassage_site.views</a></li>
 <li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">newsletter package</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -85,9 +98,18 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#newsletter-admin-module">newsletter.admin module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#newsletter-apps-module">newsletter.apps module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#newsletter-forms-module">newsletter.forms module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#newsletter-models-module">newsletter.models module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#newsletter-apps-module">newsletter.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#newsletter-forms">Newsletter Forms</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">newsletter.forms</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#newsletterform">NewsletterForm</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#newsletter-models">newsletter.models</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#newsletter">Newsletter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#newsletter-tasks-module">newsletter.tasks module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#newsletter-tests-module">newsletter.tests module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#newsletter-urls-module">newsletter.urls module</a></li>
@@ -144,13 +166,23 @@
 </section>
 <section id="newsletter-apps-module">
 <h2>newsletter.apps module<a class="headerlink" href="#newsletter-apps-module" title="Link to this heading"></a></h2>
+<section id="newsletter-forms">
+<span id="id1"></span><h3>Newsletter Forms<a class="headerlink" href="#newsletter-forms" title="Link to this heading"></a></h3>
 </section>
-<section id="newsletter-forms-module">
-<h2>newsletter.forms module<a class="headerlink" href="#newsletter-forms-module" title="Link to this heading"></a></h2>
 </section>
-<section id="newsletter-models-module">
-<h2>newsletter.models module<a class="headerlink" href="#newsletter-models-module" title="Link to this heading"></a></h2>
 </section>
+<section id="id2">
+<h1>newsletter.forms<a class="headerlink" href="#id2" title="Link to this heading"></a></h1>
+<section id="newsletterform">
+<h2>NewsletterForm<a class="headerlink" href="#newsletterform" title="Link to this heading"></a></h2>
+</section>
+</section>
+<section id="newsletter-models">
+<h1>newsletter.models<a class="headerlink" href="#newsletter-models" title="Link to this heading"></a></h1>
+<section id="newsletter">
+<h2>Newsletter<a class="headerlink" href="#newsletter" title="Link to this heading"></a></h2>
+</section>
+<hr class="docutils" />
 <section id="newsletter-tasks-module">
 <h2>newsletter.tasks module<a class="headerlink" href="#newsletter-tasks-module" title="Link to this heading"></a></h2>
 </section>

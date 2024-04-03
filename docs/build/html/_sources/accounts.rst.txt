@@ -20,13 +20,25 @@ accounts.admin module
    :undoc-members:
    :show-inheritance:
 
-accounts.apps module
---------------------
+.. _accounts_apps:
 
-.. automodule:: accounts.apps
+================
+accounts/apps
+================
+
+AccountsConfig
+---------------
+
+.. autoclass:: accounts.apps.AccountsConfig
    :members:
    :undoc-members:
    :show-inheritance:
+
+   AppConfig class for the 'accounts' app.
+
+   Attributes:
+   - default_auto_field (str): The default auto field for the app's models.
+   - name (str): The name of the app.
 
 accounts.forms module
 ---------------------
@@ -68,14 +80,22 @@ accounts.urls module
    :undoc-members:
    :show-inheritance:
 
-accounts.views module
----------------------
+.. _accounts_views:
 
-.. automodule:: accounts.views
-   :members:
-   :undoc-members:
-   :show-inheritance:
+================
+accounts/views
+================
 
+profile
+-------
+
+.. autofunction:: accounts.views.profile
+
+   View function to render the user profile page.
+
+   Returns:
+   - Rendered template for the user profile page.
+   
 Module contents
 ---------------
 
