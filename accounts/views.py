@@ -1,12 +1,4 @@
 # accounts/views.py
-'''
-The initial site was huge and overly ambitious, and was taking way too long for someone just starting out 
-and was full of all sorts of problems. I down scaled and simplified quite substantially but left the previous 
-views in a doc string to rework when I get the time in the future. The custom login and logout functions were 
-working but the custom register function was not. I was also having issues with the custom user. There is a 
-back up of the previous project for when I am gong to rework it so some things have been taken out when I 
-need to fnd them or start from scratch again and remove the docstrings.
-'''
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
@@ -32,7 +24,7 @@ def profile(request):
     - Rendered template for the user profile page.
     """
 
-    return render(request, 'accounts/dashboard.html')
+    return render(request, 'accounts:dashboard.html')
 
 logger = logging.getLogger(__name__)
 
@@ -48,10 +40,10 @@ def register(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('accounts/registration_success.html')
+            return redirect('accounts:registration_success.html')
     else:
         form = UserCreationForm()
-    return render(request, 'accounts/register.html', {'form': form})
+    return render(request, 'accounts:register.html', {'form': form})
 
 def registration_success(request):
     """
@@ -61,7 +53,7 @@ def registration_success(request):
     - Rendered template for the registration success page.
     """
 
-    return render(request, 'accounts/registration_success.html')
+    return render(request, 'accounts:registration_success.html')
 
 @login_required
 def edit_profile(request):
@@ -80,7 +72,7 @@ def edit_profile(request):
             return redirect('dashboard')
     else:
         form = ProfileEditForm(instance=user_profile)
-    return render(request, 'accounts/edit_profile.html', {'form': form})
+    return render(request, 'accounts:edit_profile.html', {'form': form})
 
 def get_data():
     """
@@ -114,7 +106,7 @@ class CustomLoginView(LoginView):
     - redirect_authenticated_user (bool): Whether to redirect authenticated users.
     """
 
-    template_name = 'accounts/login.html'
+    template_name = 'accounts:login.html'
     redirect_authenticated_user = True
 
     def get_success_url(self):
@@ -137,7 +129,7 @@ class Dashboard(LoginRequiredMixin, View):
     - login_url (str): URL to redirect to if user is not logged in.
     """
 
-    login_url = reverse_lazy('login')
+
 
     def get(self, request):
         """

@@ -12,18 +12,3 @@ urlpatterns = [
     path('booking/failure/', views.booking_failure, name='booking_failure'),
 ]
 
-
-'''
-from django.urls import path
-from . import views
-
-
-urlpatterns = [
-    path('', views.booking_home, name='booking_home'),  # Home page for bookings
-    path('list/', views.booking_list, name='booking_list'),  # View current bookings
-    path('book/', views.book_appointment, name='book_appointment'),  # Make a new booking
-    path('api/appointments/', views.appointments_api_view, name='booking-events'),
-    path('fullcalendar/', views.fullcalendar_view, name='fullcalendar'),
-    # Add more URL patterns as needed
-]
-'''
