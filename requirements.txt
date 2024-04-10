@@ -9,10 +9,8 @@ cryptography==42.0.5
 DateTime==5.5
 defusedxml==0.7.1
 Django==4.2.11
-django-allauth==0.61.1
 django-appointment==3.4.1
 django-datetime-widget2==0.9.5
-django-diary==4.2.11
 django-phonenumber-field==7.3.0
 django-picklefield==3.2
 django-q2==1.6.2
@@ -46,4 +44,3 @@ sphinxcontrib-serializinghtml==1.1.10
 sqlparse==0.4.4
 tzdata==2024.1
 urllib3==2.2.1
-zope.interface==6.2
