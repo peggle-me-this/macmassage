@@ -15,7 +15,6 @@ urlpatterns = [
     path('about_macmassage/', views.contact, name='contact'),
     path('bookings/', include('bookings.urls')),
     path('accounts/', include('accounts.urls')),
-    path('docs/', include('docs.urls')),
 
 ]
 
