@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'about_macmassage',
     'accounts',
     'bookings',
+    'newsletter',
     'rest_framework',
     'appointment',
     'django_q',

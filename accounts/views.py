@@ -1,12 +1,4 @@
 # accounts/views.py
-'''
-The initial site was huge and overly ambitious, and was taking way too long for someone just starting out 
-and was full of all sorts of problems. I down scaled and simplified quite substantially but left the previous 
-views in a doc string to rework when I get the time in the future. The custom login and logout functions were 
-working but the custom register function was not. I was also having issues with the custom user. There is a 
-back up of the previous project for when I am gong to rework it so some things have been taken out when I 
-need to fnd them or start from scratch again and remove the docstrings.
-'''
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
