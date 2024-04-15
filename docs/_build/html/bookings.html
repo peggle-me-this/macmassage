@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bookings package &mdash; Macmassage Site 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="bookings.migrations package" href="bookings.migrations.html" />
+    <link rel="prev" title="accounts.migrations package" href="accounts.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Macmassage Site
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">macmassage_site</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about_macmassage.html">about_macmassage package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounts.html">accounts package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">bookings package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.admin">bookings.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.apps">bookings.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.apps.BookingsConfig"><code class="docutils literal notranslate"><span class="pre">BookingsConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.forms">bookings.forms module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.forms.BookingForm"><code class="docutils literal notranslate"><span class="pre">BookingForm</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.models">bookings.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.models.Appointment"><code class="docutils literal notranslate"><span class="pre">Appointment</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.models.Booking"><code class="docutils literal notranslate"><span class="pre">Booking</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.models.SpecialEvent"><code class="docutils literal notranslate"><span class="pre">SpecialEvent</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.models.TradingHours"><code class="docutils literal notranslate"><span class="pre">TradingHours</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.serializers">bookings.serializers module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.serializers.AppointmentSerializer"><code class="docutils literal notranslate"><span class="pre">AppointmentSerializer</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.tasks">bookings.tasks module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.tests">bookings.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.urls">bookings.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings.views">bookings.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.appointments_api_view"><code class="docutils literal notranslate"><span class="pre">appointments_api_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.book_appointment"><code class="docutils literal notranslate"><span class="pre">book_appointment()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.booking_failure"><code class="docutils literal notranslate"><span class="pre">booking_failure()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.booking_home"><code class="docutils literal notranslate"><span class="pre">booking_home()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.booking_list"><code class="docutils literal notranslate"><span class="pre">booking_list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.booking_success"><code class="docutils literal notranslate"><span class="pre">booking_success()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.create_booking"><code class="docutils literal notranslate"><span class="pre">create_booking()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.fullcalendar_view"><code class="docutils literal notranslate"><span class="pre">fullcalendar_view()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.get_data"><code class="docutils literal notranslate"><span class="pre">get_data()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.get_special_hours"><code class="docutils literal notranslate"><span class="pre">get_special_hours()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.get_trading_hours"><code class="docutils literal notranslate"><span class="pre">get_trading_hours()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.is_time_slot_available"><code class="docutils literal notranslate"><span class="pre">is_time_slot_available()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#bookings.views.retrieve_data"><code class="docutils literal notranslate"><span class="pre">retrieve_data()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-bookings">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="macmassage_site.html">macmassage_site package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="newsletter.html">newsletter package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Macmassage Site</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">macmassage_site</a></li>
+      <li class="breadcrumb-item active">bookings package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/bookings.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bookings-package">
+<h1>bookings package<a class="headerlink" href="#bookings-package" title="Link to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="bookings.migrations.html">bookings.migrations package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="bookings.migrations.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.migrations.html#module-bookings.migrations.0001_initial">bookings.migrations.0001_initial module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0001_initial.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0001_initial.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0001_initial.Migration.initial"><code class="docutils literal notranslate"><span class="pre">Migration.initial</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0001_initial.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.migrations.html#module-bookings.migrations.0002_appointment_specialevent_tradinghours">bookings.migrations.0002_appointment_specialevent_tradinghours module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0002_appointment_specialevent_tradinghours.Migration"><code class="docutils literal notranslate"><span class="pre">Migration</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0002_appointment_specialevent_tradinghours.Migration.dependencies"><code class="docutils literal notranslate"><span class="pre">Migration.dependencies</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="bookings.migrations.html#bookings.migrations.0002_appointment_specialevent_tradinghours.Migration.operations"><code class="docutils literal notranslate"><span class="pre">Migration.operations</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.migrations.html#module-bookings.migrations">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-bookings.admin">
+<span id="bookings-admin-module"></span><h2>bookings.admin module<a class="headerlink" href="#module-bookings.admin" title="Link to this heading"></a></h2>
+</section>
+<section id="module-bookings.apps">
+<span id="bookings-apps-module"></span><h2>bookings.apps module<a class="headerlink" href="#module-bookings.apps" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.apps.BookingsConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.apps.</span></span><span class="sig-name descname"><span class="pre">BookingsConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.apps.BookingsConfig" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.apps.BookingsConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#bookings.apps.BookingsConfig.default_auto_field" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.apps.BookingsConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'bookings'</span></em><a class="headerlink" href="#bookings.apps.BookingsConfig.name" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bookings.forms">
+<span id="bookings-forms-module"></span><h2>bookings.forms module<a class="headerlink" href="#module-bookings.forms" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.forms.</span></span><span class="sig-name descname"><span class="pre">BookingForm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">files=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auto_id='id_%s'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prefix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_class=&lt;class</span> <span class="pre">'django.forms.utils.ErrorList'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label_suffix=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">empty_permitted=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">instance=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_required_attribute=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">renderer=None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.forms.BookingForm" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelForm</span></code></p>
+<p>Form for booking appointments.</p>
+<p>Allows users to select the date, start time, and end time for their appointment.</p>
+<p>Inherits from:
+- forms.ModelForm</p>
+<p>Attributes:
+- Meta: Contains information about the form’s associated model (Booking) and the fields to include.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#bookings.forms.BookingForm.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['date',</span> <span class="pre">'start_time',</span> <span class="pre">'end_time']</span></em><a class="headerlink" href="#bookings.forms.BookingForm.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#bookings.forms.BookingForm.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#bookings.models.Booking" title="bookings.models.Booking"><code class="xref py py-class docutils literal notranslate"><span class="pre">Booking</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.base_fields">
+<span class="sig-name descname"><span class="pre">base_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{'date':</span> <span class="pre">&lt;django.forms.fields.DateField</span> <span class="pre">object&gt;,</span> <span class="pre">'end_time':</span> <span class="pre">&lt;django.forms.fields.TimeField</span> <span class="pre">object&gt;,</span> <span class="pre">'start_time':</span> <span class="pre">&lt;django.forms.fields.TimeField</span> <span class="pre">object&gt;}</span></em><a class="headerlink" href="#bookings.forms.BookingForm.base_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.declared_fields">
+<span class="sig-name descname"><span class="pre">declared_fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">{}</span></em><a class="headerlink" href="#bookings.forms.BookingForm.declared_fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="bookings.forms.BookingForm.media">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">media</span></span><a class="headerlink" href="#bookings.forms.BookingForm.media" title="Link to this definition"></a></dt>
+<dd><p>Return all media required to render the widgets on this form.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bookings.models">
+<span id="bookings-models-module"></span><h2>bookings.models module<a class="headerlink" href="#module-bookings.models" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.models.Appointment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.models.</span></span><span class="sig-name descname"><span class="pre">Appointment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Appointment" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing an appointment.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.Appointment.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#bookings.models.Appointment.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.Appointment.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#bookings.models.Appointment.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Appointment.end_date">
+<span class="sig-name descname"><span class="pre">end_date</span></span><a class="headerlink" href="#bookings.models.Appointment.end_date" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Appointment.get_next_by_end_date">
+<span class="sig-name descname"><span class="pre">get_next_by_end_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">end_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Appointment.get_next_by_end_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Appointment.get_next_by_start_date">
+<span class="sig-name descname"><span class="pre">get_next_by_start_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">start_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Appointment.get_next_by_start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Appointment.get_previous_by_end_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_end_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">end_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Appointment.get_previous_by_end_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Appointment.get_previous_by_start_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_start_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateTimeField:</span> <span class="pre">start_date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Appointment.get_previous_by_start_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Appointment.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#bookings.models.Appointment.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Appointment.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#bookings.models.Appointment.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Appointment.start_date">
+<span class="sig-name descname"><span class="pre">start_date</span></span><a class="headerlink" href="#bookings.models.Appointment.start_date" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Appointment.title">
+<span class="sig-name descname"><span class="pre">title</span></span><a class="headerlink" href="#bookings.models.Appointment.title" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.models.Booking">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.models.</span></span><span class="sig-name descname"><span class="pre">Booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Booking" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model for booking appointments.</p>
+<p>Represents an appointment booking with date, start time, end time, user, status, notes, price,
+and payment status.</p>
+<p>Inherits from:
+- models.Model</p>
+<p>Attributes:
+- STATUS_CHOICES (list): Choices for booking status.
+- user_profile (ForeignKey): Reference to the user profile associated with the booking.
+- date (DateField): Date of the booking.
+- start_time (TimeField): Start time of the booking.
+- end_time (TimeField): End time of the booking.
+- status (CharField): Status of the booking.
+- notes (TextField): Additional notes for the booking.
+- price (DecimalField): Price of the booking.
+- payment_status (CharField): Payment status of the booking.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.Booking.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#bookings.models.Booking.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.Booking.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#bookings.models.Booking.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.STATUS_CHOICES">
+<span class="sig-name descname"><span class="pre">STATUS_CHOICES</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">[('pending',</span> <span class="pre">'Pending'),</span> <span class="pre">('confirmed',</span> <span class="pre">'Confirmed'),</span> <span class="pre">('canceled',</span> <span class="pre">'Canceled')]</span></em><a class="headerlink" href="#bookings.models.Booking.STATUS_CHOICES" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Booking.clean">
+<span class="sig-name descname"><span class="pre">clean</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Booking.clean" title="Link to this definition"></a></dt>
+<dd><p>Custom validation method to ensure the start time is before the end time.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.date">
+<span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#bookings.models.Booking.date" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><a class="headerlink" href="#bookings.models.Booking.end_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Booking.get_next_by_date">
+<span class="sig-name descname"><span class="pre">get_next_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Booking.get_next_by_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Booking.get_previous_by_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Booking.get_previous_by_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.Booking.get_status_display">
+<span class="sig-name descname"><span class="pre">get_status_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.CharField:</span> <span class="pre">status&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.Booking.get_status_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#bookings.models.Booking.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.notes">
+<span class="sig-name descname"><span class="pre">notes</span></span><a class="headerlink" href="#bookings.models.Booking.notes" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#bookings.models.Booking.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.payment_status">
+<span class="sig-name descname"><span class="pre">payment_status</span></span><a class="headerlink" href="#bookings.models.Booking.payment_status" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.price">
+<span class="sig-name descname"><span class="pre">price</span></span><a class="headerlink" href="#bookings.models.Booking.price" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><a class="headerlink" href="#bookings.models.Booking.start_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.status">
+<span class="sig-name descname"><span class="pre">status</span></span><a class="headerlink" href="#bookings.models.Booking.status" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.user">
+<span class="sig-name descname"><span class="pre">user</span></span><a class="headerlink" href="#bookings.models.Booking.user" title="Link to this definition"></a></dt>
+<dd><p>Accessor to the related object on the forward side of a many-to-one or
+one-to-one (via ForwardOneToOneDescriptor subclass) relation.</p>
+<p>In the example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Model</span><span class="p">):</span>
+    <span class="n">parent</span> <span class="o">=</span> <span class="n">ForeignKey</span><span class="p">(</span><span class="n">Parent</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s1">&#39;children&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">Child.parent</span></code> is a <code class="docutils literal notranslate"><span class="pre">ForwardManyToOneDescriptor</span></code> instance.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.Booking.user_id">
+<span class="sig-name descname"><span class="pre">user_id</span></span><a class="headerlink" href="#bookings.models.Booking.user_id" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.models.</span></span><span class="sig-name descname"><span class="pre">SpecialEvent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.SpecialEvent" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing a special event.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.date">
+<span class="sig-name descname"><span class="pre">date</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.date" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.description">
+<span class="sig-name descname"><span class="pre">description</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.description" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.end_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.get_next_by_date">
+<span class="sig-name descname"><span class="pre">get_next_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.SpecialEvent.get_next_by_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.get_previous_by_date">
+<span class="sig-name descname"><span class="pre">get_previous_by_date</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.DateField:</span> <span class="pre">date&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">is_next=False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.SpecialEvent.get_previous_by_date" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#bookings.models.SpecialEvent.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.SpecialEvent.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><a class="headerlink" href="#bookings.models.SpecialEvent.start_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.models.TradingHours">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.models.</span></span><span class="sig-name descname"><span class="pre">TradingHours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.TradingHours" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Model</span></code></p>
+<p>Model representing trading hours for a particular day of the week.</p>
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.DoesNotExist">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#bookings.models.TradingHours.DoesNotExist" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ObjectDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.MultipleObjectsReturned">
+<em class="property"><span class="pre">exception</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">MultipleObjectsReturned</span></span><a class="headerlink" href="#bookings.models.TradingHours.MultipleObjectsReturned" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">MultipleObjectsReturned</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.day_of_week">
+<span class="sig-name descname"><span class="pre">day_of_week</span></span><a class="headerlink" href="#bookings.models.TradingHours.day_of_week" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.end_time">
+<span class="sig-name descname"><span class="pre">end_time</span></span><a class="headerlink" href="#bookings.models.TradingHours.end_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.get_day_of_week_display">
+<span class="sig-name descname"><span class="pre">get_day_of_week_display</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">field=&lt;django.db.models.fields.IntegerField:</span> <span class="pre">day_of_week&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.models.TradingHours.get_day_of_week_display" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.id">
+<span class="sig-name descname"><span class="pre">id</span></span><a class="headerlink" href="#bookings.models.TradingHours.id" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.objects">
+<span class="sig-name descname"><span class="pre">objects</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;django.db.models.manager.Manager</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#bookings.models.TradingHours.objects" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.models.TradingHours.start_time">
+<span class="sig-name descname"><span class="pre">start_time</span></span><a class="headerlink" href="#bookings.models.TradingHours.start_time" title="Link to this definition"></a></dt>
+<dd><p>A wrapper for a deferred-loading field. When the value is read from this
+object the first time, the query is executed.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bookings.serializers">
+<span id="bookings-serializers-module"></span><h2>bookings.serializers module<a class="headerlink" href="#module-bookings.serializers" title="Link to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.serializers.AppointmentSerializer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bookings.serializers.</span></span><span class="sig-name descname"><span class="pre">AppointmentSerializer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.serializers.AppointmentSerializer" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelSerializer</span></code></p>
+<p>Serializer for the Appointment model.</p>
+<p>Serializes appointment data for use in REST API.</p>
+<p>Inherits from:
+- ModelSerializer</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="bookings.serializers.AppointmentSerializer.Meta">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Meta</span></span><a class="headerlink" href="#bookings.serializers.AppointmentSerializer.Meta" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.serializers.AppointmentSerializer.Meta.fields">
+<span class="sig-name descname"><span class="pre">fields</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">['title',</span> <span class="pre">'start_date',</span> <span class="pre">'end_date']</span></em><a class="headerlink" href="#bookings.serializers.AppointmentSerializer.Meta.fields" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="bookings.serializers.AppointmentSerializer.Meta.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#bookings.serializers.AppointmentSerializer.Meta.model" title="Link to this definition"></a></dt>
+<dd><p>alias of <a class="reference internal" href="#bookings.models.Appointment" title="bookings.models.Appointment"><code class="xref py py-class docutils literal notranslate"><span class="pre">Appointment</span></code></a></p>
+</dd></dl>
+
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-bookings.tasks">
+<span id="bookings-tasks-module"></span><h2>bookings.tasks module<a class="headerlink" href="#module-bookings.tasks" title="Link to this heading"></a></h2>
+</section>
+<section id="module-bookings.tests">
+<span id="bookings-tests-module"></span><h2>bookings.tests module<a class="headerlink" href="#module-bookings.tests" title="Link to this heading"></a></h2>
+</section>
+<section id="module-bookings.urls">
+<span id="bookings-urls-module"></span><h2>bookings.urls module<a class="headerlink" href="#module-bookings.urls" title="Link to this heading"></a></h2>
+</section>
+<section id="module-bookings.views">
+<span id="bookings-views-module"></span><h2>bookings.views module<a class="headerlink" href="#module-bookings.views" title="Link to this heading"></a></h2>
+<p>Self- see notes for accounts views.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.appointments_api_view">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">appointments_api_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.appointments_api_view" title="Link to this definition"></a></dt>
+<dd><p>API view function to retrieve appointments data for FullCalendar.</p>
+<p>Returns:
+- JsonResponse: JSON response containing appointment data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.book_appointment">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">book_appointment</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.book_appointment" title="Link to this definition"></a></dt>
+<dd><p>View function to handle booking appointment requests.</p>
+<p>If the request method is POST, it validates the form data and saves the booking.
+If the request method is GET, it renders the booking form.</p>
+<p>Returns:
+- Rendered template for the booking form or redirect to booking success page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.booking_failure">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">booking_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.booking_failure" title="Link to this definition"></a></dt>
+<dd><p>View function to render the booking failure page.</p>
+<p>Returns:
+- Rendered template for the booking failure page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.booking_home">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">booking_home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.booking_home" title="Link to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.booking_list">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">booking_list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.booking_list" title="Link to this definition"></a></dt>
+<dd><p>View function to retrieve and render the list of all bookings.</p>
+<p>Returns:
+- Rendered template for the booking list page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.booking_success">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">booking_success</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.booking_success" title="Link to this definition"></a></dt>
+<dd><p>View function to render the booking success page.</p>
+<p>Returns:
+- Rendered template for the booking success page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.create_booking">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">create_booking</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.create_booking" title="Link to this definition"></a></dt>
+<dd><p>View function to handle creating new bookings.</p>
+<p>If the request method is POST, it validates the form data and creates the booking.
+If the request method is GET, it renders the booking form.</p>
+<p>Returns:
+- Rendered template for the booking form or redirect to booking success/failure pages.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.fullcalendar_view">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">fullcalendar_view</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.fullcalendar_view" title="Link to this definition"></a></dt>
+<dd><p>View function to render the FullCalendar view for appointments.</p>
+<p>Returns:
+- Rendered template for the FullCalendar view.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.get_data">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">get_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.get_data" title="Link to this definition"></a></dt>
+<dd><p>Function to retrieve cached data or fetch data from the database.</p>
+<p>Returns:
+- QuerySet: QuerySet containing booking data.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.get_special_hours">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">get_special_hours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selected_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.get_special_hours" title="Link to this definition"></a></dt>
+<dd><p>Function to retrieve special hours for the selected date.</p>
+<p>Args:
+- selected_date (datetime.date): The selected date.</p>
+<p>Returns:
+- dict: Special hours for the selected date.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.get_trading_hours">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">get_trading_hours</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">selected_date</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.get_trading_hours" title="Link to this definition"></a></dt>
+<dd><p>Function to retrieve trading hours for the selected date.</p>
+<p>Args:
+- selected_date (datetime.date): The selected date.</p>
+<p>Returns:
+- dict: Trading hours for the selected date.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.is_time_slot_available">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">is_time_slot_available</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start_time</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.is_time_slot_available" title="Link to this definition"></a></dt>
+<dd><p>Function to check if the given start time slot is available for booking.</p>
+<p>Args:
+- start_time (datetime.time): The start time slot.</p>
+<p>Returns:
+- bool: True if the time slot is available, False otherwise.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="bookings.views.retrieve_data">
+<span class="sig-prename descclassname"><span class="pre">bookings.views.</span></span><span class="sig-name descname"><span class="pre">retrieve_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#bookings.views.retrieve_data" title="Link to this definition"></a></dt>
+<dd><p>Function to retrieve data from the database or another source.</p>
+<p>Returns:
+- QuerySet: QuerySet containing booking data.</p>
+</dd></dl>
+
+</section>
+<section id="module-bookings">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-bookings" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="accounts.migrations.html" class="btn btn-neutral float-left" title="accounts.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="bookings.migrations.html" class="btn btn-neutral float-right" title="bookings.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Bronwyn Barnes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>macmassage_site package &mdash; Macmassage Site 1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=f2a433a1"></script>
+        <script src="_static/doctools.js?v=888ff710"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="manage module" href="manage.html" />
+    <link rel="prev" title="bookings.migrations package" href="bookings.migrations.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            Macmassage Site
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">macmassage_site</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="about_macmassage.html">about_macmassage package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="accounts.html">accounts package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bookings.html">bookings package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">macmassage_site package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.asgi">macmassage_site.asgi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.celery">macmassage_site.celery module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.settings">macmassage_site.settings module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.urls">macmassage_site.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.views">macmassage_site.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.bookings"><code class="docutils literal notranslate"><span class="pre">bookings()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.contact"><code class="docutils literal notranslate"><span class="pre">contact()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.home"><code class="docutils literal notranslate"><span class="pre">home()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.login_page"><code class="docutils literal notranslate"><span class="pre">login_page()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.profile"><code class="docutils literal notranslate"><span class="pre">profile()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#macmassage_site.views.register"><code class="docutils literal notranslate"><span class="pre">register()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site.wsgi">macmassage_site.wsgi module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-macmassage_site">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="newsletter.html">newsletter package</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Macmassage Site</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">macmassage_site</a></li>
+      <li class="breadcrumb-item active">macmassage_site package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/macmassage_site.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="macmassage-site-package">
+<h1>macmassage_site package<a class="headerlink" href="#macmassage-site-package" title="Link to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading"></a></h2>
+</section>
+<section id="module-macmassage_site.asgi">
+<span id="macmassage-site-asgi-module"></span><h2>macmassage_site.asgi module<a class="headerlink" href="#module-macmassage_site.asgi" title="Link to this heading"></a></h2>
+<p>ASGI config for macmassage_site project.</p>
+<p>It exposes the ASGI callable as a module-level variable named <code class="docutils literal notranslate"><span class="pre">application</span></code>.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/deployment/asgi/">https://docs.djangoproject.com/en/5.0/howto/deployment/asgi/</a></p>
+</section>
+<section id="module-macmassage_site.celery">
+<span id="macmassage-site-celery-module"></span><h2>macmassage_site.celery module<a class="headerlink" href="#module-macmassage_site.celery" title="Link to this heading"></a></h2>
+</section>
+<section id="module-macmassage_site.settings">
+<span id="macmassage-site-settings-module"></span><h2>macmassage_site.settings module<a class="headerlink" href="#module-macmassage_site.settings" title="Link to this heading"></a></h2>
+<p>Django settings for macmassage project.</p>
+<p>Generated by ‘django-admin startproject’ using Django 5.0.2.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/5.0/topics/settings/">https://docs.djangoproject.com/en/5.0/topics/settings/</a></p>
+<p>For the full list of settings and their values, see
+<a class="reference external" href="https://docs.djangoproject.com/en/5.0/ref/settings/">https://docs.djangoproject.com/en/5.0/ref/settings/</a></p>
+</section>
+<section id="module-macmassage_site.urls">
+<span id="macmassage-site-urls-module"></span><h2>macmassage_site.urls module<a class="headerlink" href="#module-macmassage_site.urls" title="Link to this heading"></a></h2>
+</section>
+<section id="module-macmassage_site.views">
+<span id="macmassage-site-views-module"></span><h2>macmassage_site.views module<a class="headerlink" href="#module-macmassage_site.views" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.bookings">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">bookings</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.bookings" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the services page.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the services page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.contact">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">contact</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.contact" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the contact page.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the contact page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.home">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">home</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.home" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the homepage.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the homepage.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.login_page">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">login_page</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.login_page" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the login page.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the login page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.profile">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">profile</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.profile" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the user profile page.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the user profile page.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="macmassage_site.views.register">
+<span class="sig-prename descclassname"><span class="pre">macmassage_site.views.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">request</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#macmassage_site.views.register" title="Link to this definition"></a></dt>
+<dd><p>View function for rendering the registration page.</p>
+<p>Parameters:
+- request (HttpRequest): The HTTP request object.</p>
+<p>Returns:
+- HttpResponse: The rendered HTML response for the registration page.</p>
+</dd></dl>
+
+</section>
+<section id="module-macmassage_site.wsgi">
+<span id="macmassage-site-wsgi-module"></span><h2>macmassage_site.wsgi module<a class="headerlink" href="#module-macmassage_site.wsgi" title="Link to this heading"></a></h2>
+<p>WSGI config for macmassage_site project.</p>
+<p>It exposes the WSGI callable as a module-level variable named <code class="docutils literal notranslate"><span class="pre">application</span></code>.</p>
+<p>For more information on this file, see
+<a class="reference external" href="https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/">https://docs.djangoproject.com/en/5.0/howto/deployment/wsgi/</a></p>
+</section>
+<section id="module-macmassage_site">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-macmassage_site" title="Link to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bookings.migrations.html" class="btn btn-neutral float-left" title="bookings.migrations package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="manage.html" class="btn btn-neutral float-right" title="manage module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Bronwyn Barnes.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
