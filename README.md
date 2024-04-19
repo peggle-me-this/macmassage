@@ -9,7 +9,6 @@ Welcome to the Macmassage Website project! This Django-based web application all
 - [Installation](#installation)
 - [Usage](#usage)
 - [Documentation](#documentation)
-- [Contributing](#contributing)
 - [License](#license)
 - [Screenshots](#screenshots)
 
