@@ -8,7 +8,7 @@ urlpatterns = [
     path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('dashboard/', Dashboard.as_view(), name='dashboard'),
-    path('register/', register, name='register'),  # Corrected path for registration
+    path('register/', register, name='register'),
     path('password_change/', auth_views.PasswordChangeView.as_view(), name='password_change'),
     path('password_change/done/', auth_views.PasswordChangeDoneView.as_view(), name='password_change_done'),
     path('edit-profile/', edit_profile, name='edit_profile'),  # Profile editing URL

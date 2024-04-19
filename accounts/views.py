@@ -24,7 +24,7 @@ def profile(request):
     - Rendered template for the user profile page.
     """
 
-    return render(request, 'accounts:dashboard.html')
+    return render(request, 'dashboard.html')
 
 logger = logging.getLogger(__name__)
 
@@ -33,17 +33,18 @@ def register(request):
     View function to handle user registration.
 
     Returns:
-    - Rendered template for the registration form.
+    - Redirects to registration success page upon successful registration.
+    - Renders the registration form on GET request.
     """
 
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect('accounts:registration_success.html')
+            return redirect('accounts:registration_success')
     else:
-        form = UserCreationForm()
-    return render(request, 'accounts:register.html', {'form': form})
+        form = RegisterForm()
+    return render(request, 'register.html', {'form': form})
 
 def registration_success(request):
     """
@@ -53,7 +54,7 @@ def registration_success(request):
     - Rendered template for the registration success page.
     """
 
-    return render(request, 'accounts:registration_success.html')
+    return render(request, 'registration_success.html')
 
 @login_required
 def edit_profile(request):
