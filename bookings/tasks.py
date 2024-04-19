@@ -1,5 +1,5 @@
 # bookings/tasks.py
-# '''
+# 
 # will reconnect if email is needed as a feature in the future
 # from celery import shared_task
 # from django.core.mail import send_mail
@@ -25,4 +25,4 @@
 #         from_email = 'macmassage.za@gmail.com'
 #         to_email = booking.customer_email
 #         send_mail(subject, message, from_email, [to_email])
-# '''
+# 

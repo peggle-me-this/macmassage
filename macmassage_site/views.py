@@ -42,7 +42,7 @@ def bookings(request):
     """
     # View for rendering the services page
     authenticated = request.user.is_authenticated
-    return render(request, 'bookings.html',{'authenticated': authenticated})
+    return render(request, 'bookings:bookings.html',{'authenticated': authenticated})
 
 @login_required
 def profile(request):
@@ -56,7 +56,7 @@ def profile(request):
     - HttpResponse: The rendered HTML response for the user profile page.
     """
     # View for rendering the user profile page
-    return render(request, 'dashboard.html')
+    return render(request, 'accounts:dashboard.html')
     
 def login_page(request):
     """
@@ -69,7 +69,7 @@ def login_page(request):
     - HttpResponse: The rendered HTML response for the login page.
     """
     # View for rendering the login page
-    return render(request, 'login.html')
+    return render(request, 'accounts:login.html')
 
 def register(request):
     """
@@ -82,4 +82,4 @@ def register(request):
     - HttpResponse: The rendered HTML response for the registration page.
     """
     # View for rendering the registration page
-    return render(request, 'register.html')
+    return render(request, 'accounts:register.html')

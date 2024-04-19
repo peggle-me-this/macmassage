@@ -1,4 +1,4 @@
-# '''
+
 # accounts/tasks.py
 # from django.template.loader import render_to_string
 # from celery import shared_task
@@ -22,4 +22,4 @@
     
 #     # Send email
 #     send_mail(subject, message, from_email, [to_email])
-# '''
+# 

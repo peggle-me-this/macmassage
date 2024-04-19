@@ -11,3 +11,4 @@ urlpatterns = [
     path('booking/success/', views.booking_success, name='booking_success'),
     path('booking/failure/', views.booking_failure, name='booking_failure'),
 ]
+

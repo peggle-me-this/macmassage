@@ -1,7 +1,4 @@
 # bookings/views.py
-'''
-Self- see notes for accounts views.
-'''
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -46,7 +43,7 @@ def get_trading_hours(selected_date):
 
 def booking_home(request):
     # View to render the booking home page
-    return render(request, 'bookings/booking_home.html')
+    return render(request, 'booking_home.html')
 
 def is_time_slot_available(start_time):
     """
@@ -125,7 +122,7 @@ def book_appointment(request):
             return redirect('booking_success')
     else:
         form = BookingForm()
-    return render(request, 'bookings/book_appointment.html', {'form': form})
+    return render(request, 'book_appointment.html', {'form': form})
 
 @login_required
 def booking_list(request):
@@ -145,7 +142,7 @@ def fullcalendar_view(request):
     Returns:
     - Rendered template for the FullCalendar view.
     """
-    return render(request, 'bookings/fullcalendar.html')  # Corrected template path
+    return render(request, 'fullcalendar.html')  # Corrected template path
 
 def appointments_api_view(request):
     """
@@ -203,7 +200,7 @@ def create_booking(request):
     else:
         # Render the booking form
         data = get_data()  # Retrieve cached data
-        return render(request, 'bookings/book_appointment.html', {'data': data})
+        return render(request, 'book_appointment.html', {'data': data})
     
 def booking_success(request):
     """
@@ -212,7 +209,7 @@ def booking_success(request):
     Returns:
     - Rendered template for the booking success page.
     """
-    return render(request, 'bookings/booking_success.html')
+    return render(request, 'booking_success.html')
 
 def booking_failure(request):
     """
@@ -221,7 +218,7 @@ def booking_failure(request):
     Returns:
     - Rendered template for the booking failure page.
     """
-    return render(request, 'bookings/booking_failure.html')
+    return render(request, 'booking_failure.html')
 
 def booking_list(request):
     """
@@ -247,5 +244,5 @@ def booking_list(request):
         'message': message,
         'booking_dates': booking_dates_str,
     }
-    return render(request, 'bookings/booking_list.html', context)
+    return render(request, 'booking_list.html', context)
 

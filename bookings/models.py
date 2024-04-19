@@ -84,4 +84,3 @@ class TradingHours(models.Model):
     day_of_week = models.IntegerField(choices=[(i, i) for i in range(7)], unique=True)
     start_time = models.TimeField()
     end_time = models.TimeField()
-    

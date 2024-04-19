@@ -5,7 +5,7 @@ from .views import Dashboard, edit_profile, registration_success, profile, regis
 app_name = 'accounts'
 
 urlpatterns = [
-    path('login/', auth_views.LoginView.as_view(template_name='accounts/login.html'), name='login'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', auth_views.LogoutView.as_view(), name='logout'),
     path('dashboard/', Dashboard.as_view(), name='dashboard'),
     path('register/', register, name='register'),  # Corrected path for registration

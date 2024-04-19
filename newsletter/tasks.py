@@ -1,8 +1,8 @@
-# # newsletter/tasks.py
-# '''
-# from celery import shared_task
-# from django.core.mail import send_mail
-# from .models import NewsletterSubscriber, Newsletter
+# newsletter/tasks.py
+
+#from celery import shared_task
+#from django.core.mail import send_mail
+#from .models import NewsletterSubscriber, Newsletter
 
 # @shared_task
 # def send_newsletter(newsletter_id):
