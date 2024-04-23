@@ -90,7 +90,7 @@ A screenshot of the registration successful page.
 A screenshot of the current bookings available page.
 
 ### Bookings Hyperlinks Special Page
-[![Bookings Hyperlinks Special Page](bookingsHyperlinksSpecial.png)]([http://example.com](https://github.com/peggle-me-this/macmassage/blob/main/screenshots/bookingsHyperlinksSpecial.png)
+[![Bookings Hyperlinks Special Page](bookingsHyperlinksSpecial.png)](https://github.com/peggle-me-this/macmassage/blob/main/screenshots/bookingsHyperlinksSpecial.png)
 A screenshot of of the bookings hyperlinks and the specials image.
 
 ### About Macmassage Page
