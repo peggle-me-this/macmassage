@@ -79,7 +79,7 @@ A screenshot of the book appointment page.
 
 ### Registration Page
 [![Registration Page](registration.png)](https://github.com/peggle-me-this/macmassage/blob/main/screenshots/registration.png)
-A screenshot of the registraton page.
+A screenshot of the registration page.
 
 ### Successful Registration Page
 [![Successful Registration Page](registrationSuccessful.png)](https://github.com/peggle-me-this/macmassage/blob/main/screenshots/registrationSuccessful.png)
